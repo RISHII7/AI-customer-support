@@ -34,7 +34,9 @@ ai-customer-support/
 │   ├── __init__.py
 │   ├── config.py             # Application settings via Pydantic BaseSettings
 │   ├── gmail.py              # Gmail API client, thread parsing, label management & replies
-│   └── main.py               # FastAPI application entrypoint & health endpoints
+│   ├── main.py               # FastAPI application entrypoint & health endpoints
+│   ├── pipeline.py           # Message processing pipeline and workflow dispatcher
+│   └── poller.py             # Background polling loop monitoring incoming emails
 ├── scripts/
 │   ├── get_refresh_token.py  # OAuth helper to generate Google refresh token
 │   └── gmail_check.py        # Diagnostic script to test Gmail connection & reply flow
