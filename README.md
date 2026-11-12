@@ -32,9 +32,12 @@ This service automates customer support workflows by:
 ai-customer-support/
 ├── app/
 │   ├── __init__.py
-│   ├── config.py         # Application settings via Pydantic BaseSettings
-│   └── main.py           # FastAPI application entrypoint & health endpoints
-├── scripts/              # Helper scripts and automation tools
+│   ├── config.py             # Application settings via Pydantic BaseSettings
+│   ├── gmail.py              # Gmail API client, thread parsing, label management & replies
+│   └── main.py               # FastAPI application entrypoint & health endpoints
+├── scripts/
+│   ├── get_refresh_token.py  # OAuth helper to generate Google refresh token
+│   └── gmail_check.py        # Diagnostic script to test Gmail connection & reply flow
 ├── .env.example          # Template for environment configuration
 ├── .gitignore            # Git exclusion rules
 ├── .python-version       # Python version specification
@@ -75,3 +78,4 @@ Run development server:
 uv run fastapi dev app/main.py
 ```
 Check health endpoint at `http://localhost:8000/health`.
+
