@@ -33,6 +33,7 @@ ai-customer-support/
 ├── app/
 │   ├── __init__.py
 │   ├── config.py             # Application settings via Pydantic BaseSettings
+│   ├── db.py                 # PostgreSQL database client, event claims & ticket operations
 │   ├── gmail.py              # Gmail API client, thread parsing, label management & replies
 │   ├── main.py               # FastAPI application entrypoint & health endpoints
 │   ├── pipeline.py           # Message processing pipeline and workflow dispatcher
@@ -40,6 +41,9 @@ ai-customer-support/
 ├── scripts/
 │   ├── get_refresh_token.py  # OAuth helper to generate Google refresh token
 │   └── gmail_check.py        # Diagnostic script to test Gmail connection & reply flow
+├── supabase/
+│   ├── config.toml           # Supabase CLI configuration
+│   └── migrations/           # Database schema migrations (events, tickets, messages, KB)
 ├── .env.example          # Template for environment configuration
 ├── .gitignore            # Git exclusion rules
 ├── .python-version       # Python version specification
