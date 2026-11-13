@@ -47,6 +47,10 @@ ai-customer-support/
 │   ├── main.py               # FastAPI application entrypoint & health endpoints
 │   ├── pipeline.py           # Message processing pipeline and workflow dispatcher
 │   └── poller.py             # Background polling loop monitoring incoming emails
+├── dashboard/                # React + Vite + Tailwind + shadcn/ui admin dashboard
+│   ├── src/pages/            # Events, Tickets, KB editor & Login pages
+│   ├── package.json
+│   └── vite.config.ts
 ├── evals/                    # Automated evaluation dataset and evaluation runner
 │   ├── golden_emails.py      # Benchmark dataset of golden email interactions
 │   └── run_evals.py          # Concurrent evaluation runner with assertion evaluators
