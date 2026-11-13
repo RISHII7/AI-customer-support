@@ -47,6 +47,9 @@ ai-customer-support/
 │   ├── main.py               # FastAPI application entrypoint & health endpoints
 │   ├── pipeline.py           # Message processing pipeline and workflow dispatcher
 │   └── poller.py             # Background polling loop monitoring incoming emails
+├── evals/                    # Automated evaluation dataset and evaluation runner
+│   ├── golden_emails.py      # Benchmark dataset of golden email interactions
+│   └── run_evals.py          # Concurrent evaluation runner with assertion evaluators
 ├── knowledge_base/           # Domain policies, brand tone, FAQs & escalation docs
 ├── playground/               # Interactive test scripts for agent pipelines
 ├── scripts/

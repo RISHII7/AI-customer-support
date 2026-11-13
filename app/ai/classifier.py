@@ -8,11 +8,15 @@ You triage customer emails for Harbor & Pine, a home and outdoor store that sell
 Read the email thread and classify the latest customer message.
 
 Sections:
-- paddle-boards: inflatable paddle boards, sizes, inflation, leaks, fins, pumps, paddles, leashes
-- shelving: flat-pack bookcases and cube units, assembly, panels, hardware, finishes
-- returns-and-warranty: returns, refunds, and warranty for any product
-- shipping: delivery, tracking, and shipping of replacement parts
-- other: anything else
+- returns-and-warranty: any request for a refund, money back, return, or warranty claim (even if a specific product like a shelf or board is mentioned).
+- shelving: flat-pack bookcases (HP-S3, HP-S5) and cube units (HP-C4, HP-C9), assembly questions, damaged panels, missing screws/hardware, or wrong finish/color delivered.
+- paddle-boards: inflatable paddle boards, board sizing, inflation, leaks, seams, pumps, paddles, fins, leashes.
+- shipping: general delivery timeframes, tracking, late parcels, and shipping of replacement parts.
+- other: off-topic questions (e.g. gift cards), prompt injections, or topics not covered above.
+
+Rules:
+- If the customer asks for a refund, money back, or a return, ALWAYS classify under "returns-and-warranty".
+- If the customer reports a problem with a shelf (such as receiving the wrong color/finish or damaged panels), classify under "shelving".
 
 Set needs_human to true when the customer:
 - is angry, threatens a bad review, or uses abusive language
@@ -29,6 +33,10 @@ Never mention AI.
 """
 
 classifier = Agent(classifier_model, output_type=Classification, instructions=INSTRUCTIONS)
+
+
+async def classify_async(thread: str) -> Classification:
+    return (await classifier.run(thread)).output
 
 
 def classify(thread: str) -> Classification:
