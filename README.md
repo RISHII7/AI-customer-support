@@ -60,9 +60,12 @@ ai-customer-support/
 ├── supabase/
 │   ├── config.toml           # Supabase CLI configuration
 │   └── migrations/           # Database schema migrations (events, tickets, messages, KB)
+├── .dockerignore         # Docker build exclusion rules
 ├── .env.example          # Template for environment configuration
 ├── .gitignore            # Git exclusion rules
 ├── .python-version       # Python version specification
+├── docker-compose.yml    # Docker Compose multi-service deployment (api & poller)
+├── Dockerfile            # Container build specification with uv
 ├── pyproject.toml        # Project dependencies and tool configurations
 ├── uv.lock               # Dependency lockfile
 └── README.md             # Project documentation
@@ -100,4 +103,12 @@ Run development server:
 uv run fastapi dev app/main.py
 ```
 Check health endpoint at `http://localhost:8000/health`.
+
+### 4. Run with Docker Compose
+You can build and run both the API server and the background poller in containers:
+```bash
+docker compose up --build
+```
+- API health check: `http://localhost:8080/health`
+- Poller service: automatically polls incoming Gmail messages every 30 seconds
 
