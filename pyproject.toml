@@ -10,7 +10,7 @@ dependencies = [
     "google-api-python-client>=2.202.0",
     "google-auth>=2.62.2",
     "psycopg[binary]>=3.3.9",
-    "pydantic-ai-slim[anthropic]>=2.68.0",
+    "pydantic-ai-slim[openai]>=2.68.0",
     "pydantic-settings>=2.16.2",
     "python-dotenv>=1.2.4",
 ]
