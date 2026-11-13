@@ -39,9 +39,11 @@ ai-customer-support/
 │   ├── main.py               # FastAPI application entrypoint & health endpoints
 │   ├── pipeline.py           # Message processing pipeline and workflow dispatcher
 │   └── poller.py             # Background polling loop monitoring incoming emails
+├── knowledge_base/           # Domain policies, brand tone, FAQs & escalation docs
 ├── scripts/
 │   ├── get_refresh_token.py  # OAuth helper to generate Google refresh token
-│   └── gmail_check.py        # Diagnostic script to test Gmail connection & reply flow
+│   ├── gmail_check.py        # Diagnostic script to test Gmail connection & reply flow
+│   └── seed_knowledge_base.py # Ingests markdown files into PostgreSQL knowledge_base table
 ├── supabase/
 │   ├── config.toml           # Supabase CLI configuration
 │   └── migrations/           # Database schema migrations (events, tickets, messages, KB)
