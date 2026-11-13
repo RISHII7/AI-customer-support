@@ -35,6 +35,7 @@ ai-customer-support/
 │   ├── config.py             # Application settings via Pydantic BaseSettings
 │   ├── db.py                 # PostgreSQL database client, event claims & ticket operations
 │   ├── gmail.py              # Gmail API client, thread parsing, label management & replies
+│   ├── guards.py             # Safeguards against self-replies, automated bots & bulk mail
 │   ├── main.py               # FastAPI application entrypoint & health endpoints
 │   ├── pipeline.py           # Message processing pipeline and workflow dispatcher
 │   └── poller.py             # Background polling loop monitoring incoming emails
